@@ -77,3 +77,49 @@ Este é um projeto simples de controle de gastos, desenvolvido utilizando **Java
 1. Clone o repositório:
    ```bash
    git clone https://github.com/MicaelLDO/controle-gastos.git
+
+2. Navegue até a pasta do projeto:
+   ```bash
+   cd controle-gastos
+   
+3. Instale as dependências:
+   ```bash
+   npm install
+
+4. Inicie o servidor:
+   ```bash
+   npm start
+   
+5. Acesse a aplicação no navegador:
+   
+   Abra o navegador e acesse:
+   ```bash
+   http://localhost:3000   
+      
+## Melhorias Futuras
+
+- **Persistência de Dados**: Integrar um banco de dados (como SQLite ou MongoDB) para armazenar os dados permanentemente.
+- **Edição e Exclusão**: Adicionar funcionalidades para editar e excluir pessoas e transações.
+- **Autenticação**: Implementar um sistema de autenticação para proteger o acesso à aplicação.
+- **Interface Melhorada**: Utilizar uma biblioteca como Bootstrap ou Materialize para melhorar a interface do usuário.
+- **TypeScript**: Migrar o código para TypeScript para adicionar tipagem estática e melhorar a manutenção.
+- **React**: Refatorar o frontend utilizando React para uma experiência mais dinâmica e moderna.
+
+---
+
+## Aprendizados
+
+- **Express**: Aprendi a criar uma API simples com rotas, middlewares e manipulação de requisições/respostas.
+- **Organização de Código**: A estruturação do projeto em pastas (controllers, routes, services) ajudou a manter o código organizado e modular.
+- **Validações**: Implementei validações no backend para garantir a integridade dos dados.
+- **Comunicação Frontend-Backend**: Utilizei `fetch` no JavaScript para enviar e receber dados do backend.
+
+---
+
+## Contato
+
+Se tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato:
+
+- **Nome**: [Micael Dorneles]
+- **E-mail**: [micaeldorneleslp@gmail.com]
+- **GitHub**: [MicaelLDO](https://github.com/MicaelLDO)
