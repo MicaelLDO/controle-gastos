@@ -1,4 +1,4 @@
-let transacoes = []; // Array para armazenar as transações
+const transacoes = []; // Array para armazenar as transações
 let transacaoId = 1; // Contador de IDs
 
 // Função para cadastrar uma transação

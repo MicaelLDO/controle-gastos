@@ -21,6 +21,7 @@ Este é um projeto simples de controle de gastos, desenvolvido utilizando **Java
 - **JavaScript, HTML e CSS**: Optei por utilizar essas tecnologias por possuir mais conhecimento nelas, o que me permitiu entregar um programa mais sólido e funcional.
 - **Express**: Decidi utilizar o Express para melhorar meus conhecimentos sobre a ferramenta, já que estou em processo de aprendizado.
 - **Sem TypeScript e React**: Optei por não utilizar TypeScript e React devido à falta de conhecimento suficiente para entregar um resultado de qualidade. Já utilizei TypeScript antes, mas não me sinto confortável o suficiente para aplicá-lo em um projeto completo. Quanto ao React, meu conhecimento é muito básico, e preferi focar em tecnologias que domino melhor.
+- **Prettier**: Utilizei o Prettier como ferramenta de formatação e padronização de código. O Prettier automatiza a formatação do código, garantindo que ele siga um estilo consistente em todo o projeto.
 
 ---
 

@@ -1,4 +1,4 @@
-let pessoas = []; // Array para armazenar as pessoas
+const pessoas = []; // Array para armazenar as pessoas
 let pessoaId = 1; // Contador de IDs
 
 // Função para cadastrar uma pessoa
