@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Gastos</title>
+    <link rel="stylesheet" href="styles/style.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    <h1>Controle de Gastos</h1>
+    
+    <h2>Cadastrar Pessoa</h2>
+    <div id="pessoaForm">
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="number" id="idade" placeholder="Idade">
+        <button onclick="cadastrarPessoa()">Cadastrar</button>
+    </div>
+    
+    <h2>Cadastrar Transação</h2>
+    <div id="transacaoForm">
+        <input type="text" id="descricao" placeholder="Descrição">
+        <input type="number" id="valor" placeholder="Valor">
+        <select id="tipo">
+            <option value="receita">Receita</option>
+            <option value="despesa">Despesa</option>
+        </select>
+        <select id="pessoaSelect">
+            <option value="" selected disabled>Selecione uma pessoa</option>
+        </select>
+        <button onclick="cadastrarTransacao()">Cadastrar</button>
+    </div>
+    
+    <h2>Consultar Totais</h2>
+    <div class="centralizado">
+        <button onclick="consultarTotais()">Consultar</button>
+    </div>
+    
+    <div id="resultado" class="result-list"></div>
+    
+    <!-- Pop-up de confirmação -->
+    <div id="popup" class="popup">
+        <p id="popupMessage"></p>
+        <button onclick="fecharPopup()">Fechar</button>
+    </div>
+
+    <script>
+        // Função para exibir o pop-up com uma mensagem
+        function mostrarPopup(mensagem) {
+            document.getElementById('popupMessage').textContent = mensagem;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        // Função para fechar o pop-up
+        function fecharPopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Função para cadastrar uma pessoa
+        function cadastrarPessoa() {
+            const nome = document.getElementById('nome').value;
+            const idade = document.getElementById('idade').value;
+            
+            if (!nome || !idade) {
+                mostrarPopup("Por favor, preencha nome e idade.");
+                return;
+            }
+
+            fetch('/pessoas', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nome, idade: parseInt(idade) })
+            }).then(res => res.json()).then(data => {
+                mostrarPopup('Pessoa cadastrada com sucesso!');
+                document.getElementById('nome').value = '';
+                document.getElementById('idade').value = '';
+                carregarPessoas();
+            }).catch(() => mostrarPopup('Erro ao cadastrar pessoa.'));
+        }
+
+        // Função para carregar a lista de pessoas no select
+        function carregarPessoas() {
+            fetch('/pessoas')
+                .then(res => res.json())
+                .then(data => {
+                    const select = document.getElementById('pessoaSelect');
+                    select.innerHTML = '<option value="" selected disabled>Selecione uma pessoa</option>'; // Opção padrão
+
+                    data.forEach(pessoa => {
+                        const option = document.createElement('option');
+                        option.value = pessoa.id;
+                        option.textContent = pessoa.nome;
+                        select.appendChild(option);
+                    });
+                })
+                .catch(() => mostrarPopup('Erro ao carregar pessoas.'));
+        }
+
+        // Função para cadastrar uma transação
+        function cadastrarTransacao() {
+            const descricao = document.getElementById('descricao').value;
+            const valor = document.getElementById('valor').value;
+            const tipo = document.getElementById('tipo').value;
+            const pessoa = document.getElementById('pessoaSelect').value;
+            
+            if (!descricao || !valor || pessoa === "") {
+                mostrarPopup("Por favor, preencha todos os campos corretamente.");
+                return;
+            }
+
+            fetch('/transacoes', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ descricao, valor: parseFloat(valor), tipo, pessoa: parseInt(pessoa) })
+            }).then(res => res.json()).then(data => {
+                mostrarPopup('Transação cadastrada com sucesso!');
+                document.getElementById('descricao').value = '';
+                document.getElementById('valor').value = '';
+            }).catch(() => mostrarPopup('Erro ao cadastrar transação.'));
+        }
+
+        // Função para consultar os totais
+        function consultarTotais() {
+            fetch('/totais')
+                .then(res => res.json())
+                .then(data => {
+                    let resultHtml = '<ul class="styled-list">';
+                    data.relatorio.forEach(item => {
+                        resultHtml += `
+                            <li>
+                                <strong>${item.id} - ${item.nome}</strong><br>
+                                Receita: ${item.receitas.toFixed(2)}<br>
+                                Despesa: ${item.despesas.toFixed(2)}<br>
+                                Saldo: ${item.saldo.toFixed(2)}
+                            </li>
+                        `;
+                    });
+                    resultHtml += '</ul>';
+                    resultHtml += `
+                        <div class="total">
+                            Total de Receitas: ${data.totalGeral.totalReceitas.toFixed(2)}<br>
+                            Total de Despesas: ${data.totalGeral.totalDespesas.toFixed(2)}<br>
+                            Saldo Líquido: ${data.totalGeral.saldoLiquido.toFixed(2)}
+                        </div>
+                    `;
+                    document.getElementById('resultado').innerHTML = resultHtml;
+                }).catch(() => mostrarPopup('Erro ao consultar totais.'));
+        }
+
+        // Carrega a lista de pessoas ao carregar a página
+        document.addEventListener('DOMContentLoaded', carregarPessoas);
+    </script>
+</body>
+</html>

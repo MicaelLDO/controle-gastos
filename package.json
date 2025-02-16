@@ -1,0 +1,16 @@
+{
+  "name": "controle-de-gastos",
+  "version": "1.0.0",
+  "description": "Aplicação de controle de gastos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "git": "^0.1.5",
+    "nodemon": "^3.1.9"
+  }
+}
