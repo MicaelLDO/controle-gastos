@@ -12,7 +12,10 @@ exports.cadastrarTransacao = (req, res) => {
     if (valor <= 0) {
         return res.status(400).json({ error: 'O valor deve ser positivo.' });
     }
-    if (tipo !== 'despesa' && tipo !== 'receita') {
+
+    const tiposAceitos = ['despesa', 'receita'];
+    
+    if (!tiposAceitos.includes(tipo)) {
         return res.status(400).json({ error: 'O tipo deve ser "despesa" ou "receita".' });
     }
 
@@ -28,7 +31,7 @@ exports.cadastrarTransacao = (req, res) => {
     }
 
     // Cadastra a transação usando o serviço
-    const novaTransacao = transacaoService.cadastrarTransacao(descricao, valor, tipo, pessoa);
+    const novaTransacao = transacaoService.cadastrarTransacao(descricao, valor, tipo, pessoaEncontrada.id);
     res.status(201).json(novaTransacao); // Retorna a transação cadastrada
 };
 
