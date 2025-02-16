@@ -26,7 +26,8 @@ button:hover {
 }
 
 /* Estilo dos inputs e select */
-input, select {
+input,
+select {
     padding: 10px;
     margin: 10px;
     border: 1px solid #ccc;

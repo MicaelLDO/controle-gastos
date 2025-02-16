@@ -6,7 +6,9 @@ exports.cadastrarPessoa = (req, res) => {
 
     // Validação dos dados
     if (!nome || !idade || typeof idade !== 'number') {
-        return res.status(400).json({ error: 'Nome e idade são obrigatórios e idade deve ser um número inteiro.' });
+        return res.status(400).json({
+            error: 'Nome e idade são obrigatórios e idade deve ser um número inteiro.',
+        });
     }
 
     // Cadastra a pessoa usando o serviço

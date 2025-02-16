@@ -7,16 +7,20 @@ exports.cadastrarTransacao = (req, res) => {
 
     // Validação dos dados
     if (!descricao || !valor || !tipo || !pessoa) {
-        return res.status(400).json({ error: 'Todos os campos são obrigatórios.' });
+        return res
+            .status(400)
+            .json({ error: 'Todos os campos são obrigatórios.' });
     }
     if (valor <= 0) {
         return res.status(400).json({ error: 'O valor deve ser positivo.' });
     }
 
     const tiposAceitos = ['despesa', 'receita'];
-    
+
     if (!tiposAceitos.includes(tipo)) {
-        return res.status(400).json({ error: 'O tipo deve ser "despesa" ou "receita".' });
+        return res
+            .status(400)
+            .json({ error: 'O tipo deve ser "despesa" ou "receita".' });
     }
 
     // Verifica se a pessoa existe
@@ -27,11 +31,18 @@ exports.cadastrarTransacao = (req, res) => {
 
     // Validação para menores de idade
     if (pessoaEncontrada.idade < 18 && tipo === 'receita') {
-        return res.status(400).json({ error: 'Menores de idade só podem registrar despesas.' });
+        return res
+            .status(400)
+            .json({ error: 'Menores de idade só podem registrar despesas.' });
     }
 
     // Cadastra a transação usando o serviço
-    const novaTransacao = transacaoService.cadastrarTransacao(descricao, valor, tipo, pessoaEncontrada.id);
+    const novaTransacao = transacaoService.cadastrarTransacao(
+        descricao,
+        valor,
+        tipo,
+        pessoaEncontrada.id,
+    );
     res.status(201).json(novaTransacao); // Retorna a transação cadastrada
 };
 

@@ -15,5 +15,5 @@ exports.listarPessoas = () => {
 
 // Função para buscar uma pessoa por ID
 exports.buscarPessoaPorId = (id) => {
-    return pessoas.find(p => p.id === id); // Retorna a pessoa com o ID correspondente
+    return pessoas.find((p) => p.id === id); // Retorna a pessoa com o ID correspondente
 };
