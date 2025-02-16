@@ -2,6 +2,7 @@
 
 Este é um projeto simples de controle de gastos, desenvolvido utilizando **JavaScript**, **HTML** e **CSS**. O backend foi construído com o framework **Express**, e o frontend é uma aplicação estática que se comunica com o backend via requisições HTTP.
 
+
 ## Tecnologias Utilizadas
 
 ### Frontend
