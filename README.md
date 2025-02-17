@@ -18,8 +18,8 @@ Este é um projeto simples de controle de gastos, desenvolvido utilizando **Java
 
 ### Por que essas tecnologias?
 
-- **JavaScript, HTML e CSS**: Optei por utilizar essas tecnologias por possuir mais conhecimento nelas, o que me permitiu entregar um programa mais sólido e funcional.
-- **Express**: Decidi utilizar o Express para melhorar meus conhecimentos sobre a ferramenta, já que estou em processo de aprendizado.
+- **JavaScript, HTML e CSS**: Optei por utilizar essas tecnologias por estar mais acostumado e conhecer mais delas, o que me permitiu entregar um programa mais sólido e funcional.
+- **Express**: Decidi utilizar o Express para melhorar meus conhecimentos sobre a ferramenta, já que estou estudando esse framework.
 - **Sem TypeScript e React**: Optei por não utilizar TypeScript e React devido à falta de conhecimento suficiente para entregar um resultado de qualidade. Já utilizei TypeScript antes, mas não me sinto confortável o suficiente para aplicá-lo em um projeto completo. Quanto ao React, meu conhecimento é muito básico, e preferi focar em tecnologias que domino melhor.
 - **Prettier**: Utilizei o Prettier como ferramenta de formatação e padronização de código. O Prettier automatiza a formatação do código, garantindo que ele siga um estilo consistente em todo o projeto.
 
@@ -124,19 +124,19 @@ Este é um projeto simples de controle de gastos, desenvolvido utilizando **Java
 
 ## Melhorias Futuras
 
-- **Persistência de Dados**: Integrar um banco de dados (como SQLite ou MongoDB) para armazenar os dados permanentemente.
+- **Banco de Dados**: Integrar um banco de dados (como SQLite ou MongoDB) para armazenar os dados permanentemente.
 - **Edição e Exclusão**: Adicionar funcionalidades para editar e excluir pessoas e transações.
 - **Autenticação**: Implementar um sistema de autenticação para proteger o acesso à aplicação.
 - **Interface Melhorada**: Utilizar uma biblioteca como Bootstrap ou Materialize para melhorar a interface do usuário.
-- **TypeScript**: Migrar o código para TypeScript para adicionar tipagem estática e melhorar a manutenção.
-- **React**: Refatorar o frontend utilizando React para uma experiência mais dinâmica e moderna.
+- **TypeScript**: Mudar o código para TypeScript para melhorar a manutenção.
+- **React**: Aprimorar o frontend utilizando React para uma experiência mais dinâmica e moderna.
 
 ---
 
 ## Aprendizados
 
 - **Express**: Aprendi a criar uma API simples com rotas, middlewares e manipulação de requisições/respostas.
-- **Organização de Código**: A estruturação do projeto em pastas (controllers, routes, services) ajudou a manter o código organizado e modular.
+- **Organização de Código**: A estruturação do projeto em pastas (controllers, routes, services) ajudou a manter o código organizado.
 - **Validações**: Implementei validações no backend para garantir a integridade dos dados.
 - **Comunicação Frontend-Backend**: Utilizei `fetch` no JavaScript para enviar e receber dados do backend.
 
