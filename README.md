@@ -7,14 +7,14 @@ Este é um projeto simples de controle de gastos, desenvolvido utilizando **Java
 ### Frontend
 
 - **HTML**: Para a estrutura da página.
-- **CSS**: Para estilização e layout.
-- **JavaScript**: Para interatividade e comunicação com o backend.
+- **CSS**: Para definir a estilização e o layout.
+- **JavaScript**: Para a interação e conexão com o backend.
 
 ### Backend
 
 - **Node.js**: Ambiente de execução do JavaScript no servidor.
 - **Express**: Framework para criar a API e gerenciar rotas.
-- **JavaScript**: Lógica de negócio e manipulação de dados.
+- **JavaScript**: Foi usado para criar a lógica do sistema, como cadastros e cálculos, além de gerenciar os dados.
 
 ### Por que essas tecnologias?
 
@@ -115,8 +115,6 @@ Este é um projeto simples de controle de gastos, desenvolvido utilizando **Java
 
 5. Acesse a aplicação no navegador:
 
-    Abra o navegador e acesse:
-
     ```bash
     http://localhost:3000
 
@@ -136,8 +134,7 @@ Este é um projeto simples de controle de gastos, desenvolvido utilizando **Java
 ## Aprendizados
 
 - **Express**: Aprendi a criar uma API simples com rotas, middlewares e manipulação de requisições/respostas.
-- **Organização de Código**: A estruturação do projeto em pastas (controllers, routes, services) ajudou a manter o código organizado.
-- **Validações**: Implementei validações no backend para garantir a integridade dos dados.
+- **Estrutura de Código**: A estruturação do projeto em pastas (controllers, routes, services) ajudou a manter o código organizado, mesmo eu já tendo utilizado essa estrutura antes foi essencial para aprimorar meu entendimento.
 - **Comunicação Frontend-Backend**: Utilizei `fetch` no JavaScript para enviar e receber dados do backend.
 
 ---
